@@ -15,6 +15,10 @@ const startServer = async () => {
     
     app.use("/api", require("./src/routes/routes")(db));
 
+    app.get("/", (req, res) => {
+      res.send("Hello World!");
+    });
+
     app.listen(port, () => {
       console.log(`Server running on port ${port}`);
     });
